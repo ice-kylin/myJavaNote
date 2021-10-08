@@ -34,5 +34,9 @@ public class TypeConversion {
         double b3 = 123.4;
         int i4 = (int) b3; // 截断操作
         System.out.println(i4);
+
+        int i5 = 128;
+        byte b4 = (byte) i5; // -128
+        System.out.println(b4);
     }
 }
