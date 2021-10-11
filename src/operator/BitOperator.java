@@ -36,5 +36,32 @@ public class BitOperator {
         int i1 = 10;
         i1 = i1 << 2; // 40
         System.out.println("i1 = " + i1);
+
+        // 交换两个变量的值
+        // 定义临时变量
+        int n1 = 10;
+        int n2 = 20;
+        int temp;
+        System.out.println("n1 = " + n1 + ", n2 = " + n2);
+
+        temp = n1;
+        n1 = n2;
+        n2 = temp;
+        System.out.println("n1 = " + n1 + ", n2 = " + n2);
+
+        // 不用定义临时变量
+        // 相加操作可能超出存储范围
+        // 有局限性 —— 只能适用于数值类型
+        n1 = n1 + n2;
+        n2 = n1 - n2;
+        n1 = n1 - n2;
+        System.out.println("n1 = " + n1 + ", n2 = " + n2);
+
+        // 使用位运算符
+        // m = (m ^ n) ^ n
+        n1 = n1 ^ n2;
+        n2 = n1 ^ n2;
+        n1 = n1 ^ n2;
+        System.out.println("n1 = " + n1 + ", n2 = " + n2);
     }
 }
