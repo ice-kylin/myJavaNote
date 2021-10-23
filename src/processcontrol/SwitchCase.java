@@ -2,7 +2,7 @@ package processcontrol;
 /*
 # `switch - case` 结构
 
-- 格式：
+- 格式
     ```java
     switch (条件表达式) {
         case 常量1:
@@ -34,6 +34,12 @@ package processcontrol;
   5. `default` 相当于 `if - else` 中的 `else`
     - 可选的
     - 可以放到前面（一般不会这么做）
+  6. `switch - case` 和 `if - else` 的说明
+    - 凡是可以使用 `switch - case` 的结构，都可以转换为 `if - else`
+      - 反之，不成立
+    - 我们写分支结构时，当发现既可以使用 `switch - case`，又可以使用 `if - else` 时（，同时 `switch` 中表达式的取值情况不太多）
+      - 优先使用 `switch - case`
+      - 因为 `switch - case`
  */
 
 import java.util.Scanner;
