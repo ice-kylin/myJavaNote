@@ -39,7 +39,6 @@ package processcontrol;
       - 反之，不成立
     - 我们写分支结构时，当发现既可以使用 `switch - case`，又可以使用 `if - else` 时（，同时 `switch` 中表达式的取值情况不太多）
       - 优先使用 `switch - case`
-      - 因为 `switch - case`
  */
 
 import java.util.Scanner;

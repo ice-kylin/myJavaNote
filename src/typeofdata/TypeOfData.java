@@ -30,7 +30,13 @@ package typeofdata;
 - 局部变量
  */
 public class TypeOfData {
+    float addOneToFloat(float number) {
+        return ++number;
+    }
+
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        TypeOfData tod = new TypeOfData();
+
+        System.out.println("" + tod.addOneToFloat(1.0f));
     }
 }
