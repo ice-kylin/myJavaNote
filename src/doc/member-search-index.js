@@ -1,1 +1,0 @@
-memberSearchIndex = [{"l":"main(String[])","h":"","u":"main(java.lang.String[])"},{"l":"注释()","h":"","u":"%3Cinit%3E()"}]

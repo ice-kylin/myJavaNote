@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"所有类","h":"","u":"allclasses-index.html"},{"l":"注释","h":"","u":""}]
