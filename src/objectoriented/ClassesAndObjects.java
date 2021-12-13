@@ -14,7 +14,7 @@ package objectoriented;
 
 - 是实际存在的该类事物的每个个体，因而也称为实例（instance）
  */
-public class ClassesAObjects {
+public class ClassesAndObjects {
     public static void main(String[] args) {
 
     }
