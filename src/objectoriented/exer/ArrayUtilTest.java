@@ -1,4 +1,4 @@
-package objectoriented;
+package objectoriented.exer;
 
 /*
 # 自定义 Array 工具类
