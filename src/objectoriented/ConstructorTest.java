@@ -11,6 +11,7 @@ package objectoriented;
 ## 说明
 
 - 如果没有显式的定义类的构造器的话，则默认提供一个空参的构造器
+  - 此构造器和类的权限相同
 - 定义构造器的格式：`权限修饰符 类名(形参列表) {}`
 - 一个类中定义的多个构造器，彼此构成重载
 - 一旦显式的定义了类的构造器之后，系统就不再提供默认的空参构造器了
@@ -20,8 +21,16 @@ package objectoriented;
 
 1. 默认初始化
 2. 显式初始化
-3. 构造器中赋值
+3. 构造器中初始化
 4. 通过 `对象.方法` 或 `对象.属性` 的方式赋值
+
+## JavaBean
+
+- JavaBean 是一种 Java 语言写成的可重用组件
+- 所谓 JavaBean 是指符合以下标准的 Java 类
+  - 类是公共的
+  - 有一个无参的公共的构造器
+  - 有属性，且有对应的 `get` 和 `set` 方法
  */
 public class ConstructorTest {
     public static void main(String[] args) {
