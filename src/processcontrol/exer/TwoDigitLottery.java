@@ -7,6 +7,7 @@ package processcontrol.exer;
     - 范围：[0.0, 1.0)
     - 公式 ([a, b))：(int) (Math.random() * (b - a + 1) + a)
  */
+
 import java.util.Scanner;
 
 public class TwoDigitLottery {
