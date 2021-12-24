@@ -92,4 +92,58 @@ public class WrapperTest {
         System.out.println(f1);
         System.out.println(d1);
     }
+
+    // 基本数据类型、包装类 -> `String` 类型
+    @Test
+    public void test4() {
+        int i1 = 233;
+        boolean b1 = true;
+
+        // 方式一：连接运算
+        System.out.println(i1 + "");
+        System.out.println(b1 + "");
+
+        System.out.println();
+
+        // 方式二：调用 `String` 的 `.valueOf(Xxx xxx)`
+        System.out.println(String.valueOf(i1));
+        System.out.println(String.valueOf(b1));
+    }
+
+    // `String` -> 基本数据类型、包装类：调用包装类的 `.parseXxx(String s)`
+    @Test
+    public void test5() {
+        String s1 = "233";
+        String s2 = "TrUe";
+
+        //
+        int i1 = Integer.parseInt(s1);
+        boolean b1 = Boolean.parseBoolean(s2);
+
+        System.out.println(i1);
+        System.out.println(b1);
+    }
+
+    /*
+    # 注意点
+
+    - `Integer` 内部定义了 `IntegerCache` 结构，`IntegerCache` 中定义了 `Integer[]`
+    - 保存了从 `-128` ~ `127` 范围的整数
+    - 如果使用自动装箱的方式，给 `Integer` 赋值的范围在 `-128` ~ `127` 范围内时
+    - 可以直接使用数组中的元素，不用再去 `new` 了，从而提高了效率
+     */
+    @Test
+    public void test6() {
+        Integer i1 = new Integer(1);
+        Integer i2 = new Integer(1);
+        System.out.println(i1 == i2);
+
+        Integer i3 = 1;
+        Integer i4 = 1;
+        System.out.println(i3 == i4);
+
+        Integer i5 = 128;
+        Integer i6 = 128;
+        System.out.println(i5 == i6);
+    }
 }
