@@ -25,3 +25,15 @@ public class OverrideTest {
 
     }
 }
+
+class Person {
+    private void show() {
+        System.out.println("我是人");
+    }
+}
+
+class Student extends Person {
+    public void show() {
+        System.out.println("我是学生");
+    }
+}
