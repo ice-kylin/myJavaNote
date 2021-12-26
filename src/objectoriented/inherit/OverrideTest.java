@@ -22,17 +22,22 @@ package objectoriented.inherit;
  */
 public class OverrideTest {
     public static void main(String[] args) {
-
+        Person p = new Student();
+        System.out.println(p.name);
     }
 }
 
 class Person {
+    public String name = "人";
+
     private void show() {
         System.out.println("我是人");
     }
 }
 
 class Student extends Person {
+    public String name = "学生";
+
     public void show() {
         System.out.println("我是学生");
     }
