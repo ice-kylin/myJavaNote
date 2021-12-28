@@ -116,7 +116,6 @@ public class WrapperTest {
         String s1 = "233";
         String s2 = "TrUe";
 
-        //
         int i1 = Integer.parseInt(s1);
         boolean b1 = Boolean.parseBoolean(s2);
 
