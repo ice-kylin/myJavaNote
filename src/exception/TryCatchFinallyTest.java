@@ -29,6 +29,13 @@ import org.junit.Test;
     - 开发中由于运行时异常比较常见，所以通常就不针对运行时异常编写 `try - catch - finally` 了
       - 针对编译时异常，一定要考虑异常的处理
   2. `throws`
+
+## 开发中如何选择使用 `try - catch - finally` 还是 `throws`
+
+- 如果父类中被重写的方法没有 `throws` 方式处理异常，则子类重写的方法也不能使用 `throws`
+  - 意味着如果子类重写的方法中有异常，必须使用 `try - catch - finally` 方式处理
+- 执行的方法 a 中，先后又调用了额外的几个方法，这几个方法是递进关系的，建议这几个方法使用 `throws` 的方式进行处理
+  - 而执行的方法 a 可以考虑使用 `try - catch - finally` 的方式进行处理
  */
 public class TryCatchFinallyTest {
     @Test
