@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 1. 继承于现有的异常结构：`RuntimeException`、`Exception`
 2. 提供全局常量：`serialVersionUID`
+3. 提供重载的构造器
  */
 public class CustomExceptionTest {
     public static void main(String[] args) {
