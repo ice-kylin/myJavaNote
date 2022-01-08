@@ -17,6 +17,7 @@ public class TSUtility {
             for (String choice : choices) {
                 if (choice.equals(userChoice)) {
                     correctness = true;
+
                     break;
                 }
             }

@@ -1,4 +1,4 @@
-package online.icekylin.teamview.model;
+package online.icekylin.teamview.domain;
 
 public interface Equipment {
     String getDescription();

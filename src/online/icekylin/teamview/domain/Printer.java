@@ -1,8 +1,11 @@
-package online.icekylin.teamview.model;
+package online.icekylin.teamview.domain;
 
 public class Printer implements Equipment {
     private String name;
     private String type;
+
+    public Printer() {
+    }
 
     public Printer(String name, String type) {
         this.name = name;
@@ -27,6 +30,6 @@ public class Printer implements Equipment {
 
     @Override
     public String getDescription() {
-        return null;
+        return name + "（" + type + "）";
     }
 }

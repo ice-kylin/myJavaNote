@@ -1,8 +1,11 @@
-package online.icekylin.teamview.model;
+package online.icekylin.teamview.domain;
 
 public class PC implements Equipment {
     private String model;
     private String display;
+
+    public PC() {
+    }
 
     public PC(String model, String display) {
         this.model = model;
@@ -27,6 +30,6 @@ public class PC implements Equipment {
 
     @Override
     public String getDescription() {
-        return null;
+        return model + "（" + display + "）";
     }
 }

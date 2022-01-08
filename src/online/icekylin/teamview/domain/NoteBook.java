@@ -1,8 +1,11 @@
-package online.icekylin.teamview.model;
+package online.icekylin.teamview.domain;
 
-public class NoteBook implements Equipment{
+public class NoteBook implements Equipment {
     private String model;
     private double price;
+
+    public NoteBook() {
+    }
 
     public NoteBook(String model, double price) {
         this.model = model;
@@ -27,6 +30,6 @@ public class NoteBook implements Equipment{
 
     @Override
     public String getDescription() {
-        return null;
+        return model + "（" + price + "）";
     }
 }
