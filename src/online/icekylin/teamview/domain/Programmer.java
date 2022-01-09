@@ -8,11 +8,13 @@ public class Programmer extends Employee {
     private Equipment equipment;
 
     public Programmer() {
+        status = Status.FREE;
     }
 
     public Programmer(int id, String name, int age, double salary, Equipment equipment) {
         super(id, name, age, salary);
         this.equipment = equipment;
+        status = Status.FREE;
     }
 
     public int getMemberId() {
@@ -37,5 +39,14 @@ public class Programmer extends Employee {
 
     public void setEquipment(Equipment equipment) {
         this.equipment = equipment;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\t\t"
+                + "程序员" + "\t\t"
+                + String.format("%8s", status.getNAME())
+                + String.format("\t\t%8s\t\t%5s\t\t", "", "")
+                + getEquipment().getDescription();
     }
 }

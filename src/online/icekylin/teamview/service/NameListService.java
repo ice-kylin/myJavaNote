@@ -3,10 +3,6 @@ package online.icekylin.teamview.service;
 import online.icekylin.teamview.domain.*;
 
 public class NameListService {
-    public static void main(String[] args) {
-
-    }
-
     private final Employee[] employees;
 
     public NameListService() {
@@ -76,8 +72,8 @@ public class NameListService {
     }
 
     public Employee getEmployee(int id) throws TeamException {
-        for (Employee employee : employees){
-            if (employee.getId() == id){
+        for (Employee employee : employees) {
+            if (employee.getId() == id) {
                 return employee;
             }
         }

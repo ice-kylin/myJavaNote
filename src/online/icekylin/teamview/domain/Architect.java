@@ -18,4 +18,17 @@ public class Architect extends Designer {
     public void setStock(int stock) {
         this.stock = stock;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%2d", getId()) +
+                "\t\t" + String.format("%4s", getName()) +
+                "\t\t" + String.format("%2d", getAge()) +
+                "\t\t" + String.format("%8.2f", getSalary()) +
+                "\t\t" + "架构师" +
+                "\t\t" + String.format("%8s", getStatus().getNAME()) +
+                "\t\t" + String.format("%8.2f", getBonus()) +
+                "\t\t" + String.format("%5d", stock) +
+                "\t\t" + getEquipment().getDescription();
+    }
 }
