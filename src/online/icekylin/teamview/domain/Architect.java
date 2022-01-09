@@ -31,4 +31,15 @@ public class Architect extends Designer {
                 "\t\t" + String.format("%5d", stock) +
                 "\t\t" + getEquipment().getDescription();
     }
+
+    @Override
+    public String toTeamInfoString() {
+        return String.format("%5s", getMemberId() + "/" + getId()) +
+                "\t\t" + String.format("%4s", getName()) +
+                "\t\t" + String.format("%2d", getAge()) +
+                "\t\t" + String.format("%8.2f", getSalary()) +
+                "\t\t" + "架构师" +
+                "\t\t" + String.format("%8.2f", getBonus()) +
+                "\t\t" + String.format("%5d", stock);
+    }
 }

@@ -49,4 +49,12 @@ public class Programmer extends Employee {
                 + String.format("\t\t%8s\t\t%5s\t\t", "", "")
                 + getEquipment().getDescription();
     }
+
+    public String toTeamInfoString() {
+        return String.format("%5s", memberId + "/" + getId()) +
+                "\t\t" + String.format("%4s", getName()) +
+                "\t\t" + String.format("%2d", getAge()) +
+                "\t\t" + String.format("%8.2f", getSalary()) +
+                "\t\t" + "程序员";
+    }
 }

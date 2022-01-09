@@ -78,6 +78,6 @@ public class NameListService {
             }
         }
 
-        throw new TeamException("找不到 id 对应的 employee 对象");
+        throw new TeamException("找不到 ID 对应的员工");
     }
 }

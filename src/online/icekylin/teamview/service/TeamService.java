@@ -34,15 +34,15 @@ public class TeamService {
             throw new TeamException("该成员不是开发人员，无法添加");
         }
 
-        for (Programmer programmer : team) {
-            if (programmer.getId() == employee.getId()) {
+        for (int i = 0; i < total; i++) {
+            if (team[i].getId() == employee.getId()) {
                 isSame = true;
                 break;
             }
 
-            if (programmer instanceof Architect) {
+            if (team[i] instanceof Architect) {
                 architectNum++;
-            } else if (programmer instanceof Designer) {
+            } else if (team[i] instanceof Designer) {
                 designerNum++;
             } else {
                 programmerNum++;

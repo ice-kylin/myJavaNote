@@ -12,7 +12,7 @@ public class TSUtility {
         System.out.print(msg);
 
         do {
-            userChoice = scanner.next();
+            userChoice = scanner.nextLine();
 
             for (String choice : choices) {
                 if (choice.equals(userChoice)) {
@@ -29,7 +29,7 @@ public class TSUtility {
         return userChoice;
     }
 
-    private static int readInt(int min, int max, String msg, String errorMsg) {
+    public static int readInt(String msg, String errorMsg) {
         int userChoice;
 
         System.out.print(msg);
@@ -37,16 +37,13 @@ public class TSUtility {
         do {
             try {
                 userChoice = scanner.nextInt();
+                scanner.nextLine();
             } catch (NumberFormatException e) {
                 System.out.print(errorMsg);
                 continue;
             }
 
-            if (userChoice >= min && userChoice <= max) {
-                break;
-            } else {
-                System.out.print(errorMsg);
-            }
+            break;
         } while (true);
 
         return userChoice;
@@ -60,15 +57,12 @@ public class TSUtility {
     }
 
     public static void readReturn() {
-        System.out.println("按下回车继续...");
+        System.out.print("按下回车继续...");
         scanner.nextLine();
     }
 
-    public static boolean readConfirmSelection() {
-        String selection = readString(new String[]{"Y", "y", "N", "n"},
-                "确认是否退出 (y / N)：",
-                "选择错误，请重新输入 (y / N)："
-        );
+    public static boolean readConfirmSelection(String msg, String errorMsg) {
+        String selection = readString(new String[]{"Y", "y", "N", "n"}, msg, errorMsg);
 
         switch (selection) {
             case "Y":
