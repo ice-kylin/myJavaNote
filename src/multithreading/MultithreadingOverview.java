@@ -30,7 +30,7 @@ package multithreading;
 - 单核 CPU
   - 假的多线程
 - 多核 CPU
-  - 可以更好的发挥多线程的效率
+  - 可以更好地发挥多线程的效率
 - 一个 Java 应用程序至少有三个线程
   1. `main()` 主线程
   2. `gc()` 垃圾回收线程
@@ -53,6 +53,11 @@ package multithreading;
 - 程序需要同时执行两个或多个线程
 - 程序需要实现一些需要等待的任务，如用户输入、文件读写、网络操作、搜索等
 - 需要一些后台运行的程序时
+
+## Java 中线程的分类
+
+- 守护线程
+- 用户线程
  */
 public class MultithreadingOverview {
     public static void main(String[] args) {

@@ -16,7 +16,9 @@ package multithreading;
     1. 实现的方式没有类的单继承性的局限性
     2. 实现的方式更适合处理多个线程有共享数据的情况
 - 联系：`public class Thread implements Runnable`
-- 相同点：两种方式都需要重写 `run()` 方法，将线程要执行的逻辑声明在 `run()` 中
+- 相同点
+  - 两种方式都需要重写 `run()` 方法，将线程要执行的逻辑声明在 `run()` 中
+  - 两种方式想要启动线程，都是调用的 `Thread` 类中的 `start()` 方法
  */
 public class ThreadTest1 {
     public static void main(String[] args) {
