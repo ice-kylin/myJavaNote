@@ -1,11 +1,11 @@
 package multithreading;
 
-public class ThreadSafetyTest2 {
+public class ThreadSafetyTest3 {
     public static void main(String[] args) {
-        WinRunnable2 w = new WinRunnable2();
+        Win win = new Win(10);
 
-        Thread t1 = new Thread(w);
-        Thread t2 = new Thread(w);
+        WinThread2 t1 = new WinThread2(win);
+        WinThread2 t2 = new WinThread2(win);
 
         t1.setName("窗口一");
         t2.setName("窗口二");
@@ -15,10 +15,14 @@ public class ThreadSafetyTest2 {
     }
 }
 
-class WinRunnable2 implements Runnable {
-    private final Win win = new Win(10);
+class WinThread2 extends Thread {
+    private final Win win;
 
-    private synchronized boolean sellATicket() {
+    public WinThread2(Win win) {
+        this.win = win;
+    }
+
+    private static synchronized boolean sellATicket(Win win) {
         if (win.getTicketNum() > 0) {
             try {
                 Thread.sleep(100);
@@ -36,7 +40,7 @@ class WinRunnable2 implements Runnable {
 
     @Override
     public void run() {
-        while (sellATicket()) {
+        while (sellATicket(win)) {
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {
