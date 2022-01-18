@@ -7,7 +7,7 @@ public class BankTest {
 }
 
 class Bank {
-    private static Bank instance;
+    private static volatile Bank instance;
 
     private Bank() {
     }

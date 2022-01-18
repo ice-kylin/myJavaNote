@@ -1,5 +1,7 @@
 package multithreading;
 
+import java.util.concurrent.locks.ReentrantLock;
+
 /*
 # 解决线程安全的方式三：Lock 锁（JDK 5.0 新增）
 
@@ -16,6 +18,59 @@ package multithreading;
  */
 public class LockTest {
     public static void main(String[] args) {
+        WinRunnable3 w = new WinRunnable3();
 
+        Thread t1 = new Thread(w);
+        Thread t2 = new Thread(w);
+        Thread t3 = new Thread(w);
+        Thread t4 = new Thread(w);
+
+        t1.setName("窗口一");
+        t2.setName("窗口二");
+        t3.setName("窗口三");
+        t4.setName("窗口四");
+
+        t1.start();
+        t2.start();
+        t3.start();
+        t4.start();
+    }
+}
+
+class WinRunnable3 implements Runnable {
+    private final Win win = new Win(10);
+    private final ReentrantLock lock = new ReentrantLock();
+
+    @Override
+    public void run() {
+        while (true) {
+            if (win.getTicketNum() > 0) {
+                try {
+                    lock.lock();
+
+                    if (win.getTicketNum() > 0) {
+                        try {
+                            Thread.sleep(100);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+
+                        win.sellATicket();
+                    } else {
+                        break;
+                    }
+                } finally {
+                    lock.unlock();
+                }
+            } else {
+                break;
+            }
+
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
