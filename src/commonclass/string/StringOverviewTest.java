@@ -43,7 +43,7 @@ public class StringOverviewTest {
     1. 通过字面量定义的方式
       - 数据声明在方法区中的字符串常量池中
     2. 通过 `new` + 构造器的方式
-      - STFSC
+      - RTFSC
      */
     @Test
     public void test2() {
