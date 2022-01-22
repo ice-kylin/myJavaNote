@@ -2,8 +2,6 @@ package commonclass.string;
 
 import org.junit.Test;
 
-import java.util.Locale;
-
 /*
 # `String` 常用方法
  */
@@ -80,5 +78,51 @@ public class StringMethodTest {
         System.out.println("s1.equals(s2) = " + s1.equals(s2));
         System.out.println("s1.equals(s3) = " + s1.equals(s3));
         System.out.println("s1.equalsIgnoreCase(s3) = " + s1.equalsIgnoreCase(s3));
+    }
+
+    /*
+    `String concat()`：将指定字符串连接到此字符串的结尾（等价于用 `+`）
+     */
+    @Test
+    public void test7() {
+        String s1 = "Hello";
+        String s2 = s1.concat(" ").concat("World!");
+
+        System.out.println("s1 = " + s1);
+        System.out.println("s2 = " + s2);
+
+        String s3 = "HelloWorld";
+        String s4 = "Hello".concat("World");
+
+        System.out.println("(s3 == s4) = " + (s3 == s4)); // false
+        System.out.println("s3.equals(s4) = " + s3.equals(s4));
+    }
+
+    /*
+    `compareTo()`：比较两个字符串的大小
+      - 涉及到字符串排序
+     */
+    @Test
+    public void test8() {
+        String s1 = "abc";
+        String s2 = "abe";
+
+        System.out.println("s1.compareTo(s2) = " + s1.compareTo(s2));
+    }
+
+    /*
+    - `String substring(int beginIndex)`
+      - 返回一个新的字符串，它是此字符串的从 `beginIndex` 开始截取到最后的一个子字符串
+    - `String substring(int beginIndex, int endIndex)`
+      - 返回一个新的字符串，它是此字符串的从 `beginIndex` 开始截取到 `endIndex`（不包含）的一个子字符串
+     */
+    @Test
+    public void test9() {
+        String s1 = "Hello World!";
+        String s2 = s1.substring(6);
+        String s3 = s1.substring(6, 11);
+
+        System.out.println("s2 = " + s2);
+        System.out.println("s3 = " + s3);
     }
 }
