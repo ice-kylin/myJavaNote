@@ -84,5 +84,10 @@ public class StringOverviewTest {
         System.out.println(s3 == s6);
         System.out.println(s3 == s7);
         System.out.println(s3 == s7.intern());
+
+        final String s8 = "Hello";
+        String s9 = s8 + "World";
+
+        System.out.println(s3 == s9); // true
     }
 }

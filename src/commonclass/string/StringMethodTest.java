@@ -4,6 +4,21 @@ import org.junit.Test;
 
 /*
 # `String` 常用方法 1
+
+- `int length()`：返回字符串的长度
+- `char charAt()`：返回指定索引处的字符
+- `boolean isEmpty()`：判断是否是空字符串
+- `String toLowerCase()`：使用默认语言环境，将 `String` 中的所有字符转换为小写
+- `String toLowerCase()`：使用默认语言环境，将 `String` 中的所有字符转换为大写
+- `String trim()`：返回字符串的副本，忽略前导空白和尾部空白
+- `boolean equals()`：比较字符串的内容是否相同
+- `boolean equalsIgnoreCase()`：与 `equals()` 方法类似，忽略大小写
+- `String concat()`：将指定字符串连接到此字符串的结尾（等价于用 `+`）
+- `compareTo()`：比较两个字符串的大小
+- `String substring(int beginIndex)`
+  - 返回一个新的字符串，它是此字符串的从 `beginIndex` 开始截取到最后的一个子字符串
+- `String substring(int beginIndex, int endIndex)`
+  - 返回一个新的字符串，它是此字符串的从 `beginIndex` 开始截取到 `endIndex`（不包含）的一个子字符串
  */
 public class StringMethodTest {
     /*
