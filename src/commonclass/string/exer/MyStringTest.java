@@ -2,6 +2,8 @@ package commonclass.string.exer;
 
 import org.junit.Test;
 
+import java.util.Arrays;
+
 public class MyStringTest {
     @Test
     public void test1() {
@@ -44,6 +46,21 @@ public class MyStringTest {
     public void test3() {
         int i1 = MyStrings.occurrencesOfString("ab", "abkkcadkabkebfkabkskab");
         System.out.println("i1 = " + i1);
+    }
+
+    @Test
+    public void test4() {
+        String s1 = "abcwerthelloyuiodef";
+        String s2 = "cvhellobnm";
+
+        String s3 = MyStrings.getLargestIdenticalSubstring(s1, s2);
+        System.out.println("s3 = " + s3);
+    }
+
+    @Test
+    public void test5() {
+        String s1 = MyStrings.getSortedString("abcdefggfedcba");
+        System.out.println("s1 = " + s1);
     }
 }
 
@@ -126,11 +143,33 @@ class MyStrings {
 
     // 获取两个字符串中最大的相同子串
     public static String getLargestIdenticalSubstring(String s1, String s2) {
-        return null;
+        boolean s1IsLonger = s1.length() > s2.length();
+        String longString = s1IsLonger ? s1 : s2;
+        String shortString = s1IsLonger ? s2 : s1;
+
+        String rst = "";
+        String substring;
+
+        label:
+        for (int i = shortString.length(); i > 0; i--) {
+            for (int i1 = 0; i1 <= shortString.length() - i; i1++) {
+                substring = shortString.substring(i1, i1 + i);
+
+                if (longString.contains(substring)) {
+                    rst = substring;
+                    break label;
+                }
+            }
+        }
+
+        return rst;
     }
 
     // 对字符串中字符进行自然顺序排序
     public static String getSortedString(String s) {
-        return null;
+        char[] cs = s.toCharArray();
+        Arrays.sort(cs);
+
+        return new String(cs);
     }
 }
