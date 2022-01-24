@@ -149,10 +149,11 @@ class MyStrings {
 
         String rst = "";
         String substring;
+        int length = shortString.length();
 
         label:
-        for (int i = shortString.length(); i > 0; i--) {
-            for (int i1 = 0; i1 <= shortString.length() - i; i1++) {
+        for (int i = length; i > 0; i--) {
+            for (int i1 = 0; i1 <= length - i; i1++) {
                 substring = shortString.substring(i1, i1 + i);
 
                 if (longString.contains(substring)) {
