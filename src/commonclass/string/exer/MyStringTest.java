@@ -123,4 +123,14 @@ class MyStrings {
 
         return occurrences;
     }
+
+    // 获取两个字符串中最大的相同子串
+    public static String getLargestIdenticalSubstring(String s1, String s2) {
+        return null;
+    }
+
+    // 对字符串中字符进行自然顺序排序
+    public static String getSortedString(String s) {
+        return null;
+    }
 }

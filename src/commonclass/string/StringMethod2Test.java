@@ -6,9 +6,9 @@ import org.junit.Test;
 # `String` 常用方法 3
 
 - `String replace(char oldChar, char newChar)`
-  - 返回一个新的字符串，它是通过用 `newChar` 替换此字符串中出现的所有 `oldChar` 得到的
+  - 返回一个新的字符串，它是通过用 `newChar` 替换此字符串中出现的**所有** `oldChar` 得到的
 - `String replace(CharSequence target, CharSequence replacement)`
-  - 使用指定的字面值替换序列替换此字符串所有匹配字面值目标序列的子字符串
+  - 使用指定的字面值替换序列替换此字符串**所有**匹配字面值目标序列的子字符串
 - `String replaceAll(String regex, String replacement)`
   - 使用给定的 `replacement` 替换此字符串所有匹配给定的正则表达式的子字符串
 - `String replaceFirst(String regex, String replacement)`
