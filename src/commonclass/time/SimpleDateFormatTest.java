@@ -12,7 +12,7 @@ import java.util.Date;
 1. `System` 类中的 `currentTimeMillis()`
 2. `java.util.Date` 类和其子类 `java.sql.Date`
 3. `SimpleDateFormat` 类
-4. `Calender` 类
+4. `java.util.Calender` 类
  */
 public class SimpleDateFormatTest {
     /*
