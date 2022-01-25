@@ -14,11 +14,11 @@ import java.time.*;
 - 格式化：格式化只对 `Date` 有用，`Calendar` 则不行
 - 此外，它们也不是线程安全的，不能处理闰秒等
  */
-public class TimeTest {
+public class LocalDateTimeTest {
     /*
-    ## `localDate`、`localTime`、`localDateTime` 的使用
+    ## `LocalDate`、`LocalTime`、`LocalDateTime` 的使用
 
-    - 说明：`localDateTime` 相较于 `localDate` 和 `localTime` 使用频率高一些
+    - 说明：`LocalDateTime` 相较于 `LocalDate` 和 `LocalTime` 使用频率高一些
     - 类似于 `Calendar`
 
     ### 常用方法
