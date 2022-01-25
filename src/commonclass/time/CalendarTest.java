@@ -29,6 +29,7 @@ public class CalendarTest {
         - 获取月份时：一月是 `0`、二月是 `1`、...、十二月是 `11`
         - 获取星期时：周日是 `1`、周一是 `2`、...、周六是 `7`
     - `void set(int field, int value)`
+    - `void add(int field, int amount)`
      */
     @Test
     public void test1() {
