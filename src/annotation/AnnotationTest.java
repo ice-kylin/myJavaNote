@@ -78,6 +78,15 @@ import java.util.ArrayList;
       - `MODULE`
   - `@Documented`：表示所修饰的注解在被 `javadoc` 解析时保留下来
   - `@Inherited`：被它修饰的注解将具有继承性
+
+## JDK 8.0 中注解的新特性：可重复注解、类型注解
+
+- 可重复注解
+  1. 在 `Xxx` 上声明 `@Repeatable`，成员值为 `Xxxs.class`
+  2. `Xxxs` 的 `@Target` 和 `@Retention` 等元注解和 `Xxx` 的相同
+- 类型注解
+  - `ElementType.TYPE_PARAMETER`：表示该注解能写在类型变量的声明语句中（如：泛型声明）
+  - `ElementType.TYPE_USE`：表示该注解能写在使用类型的任何语句中
  */
 public class AnnotationTest {
     @Test
@@ -88,7 +97,15 @@ public class AnnotationTest {
 
     @Test
     @MyAnnotation(value = "hi")
+    @MyAnnotation(value = "what's up")
     public void test2() {
         System.out.println("Hello");
+    }
+
+    @Test
+    public void test3() throws @MyAnnotation RuntimeException {
+        ArrayList<@MyAnnotation String> list = new ArrayList<>();
+
+        @MyAnnotation int num = (@MyAnnotation int) 10L;
     }
 }

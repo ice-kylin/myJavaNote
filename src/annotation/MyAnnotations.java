@@ -1,8 +1,11 @@
 package annotation;
 
-import java.lang.annotation.*;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
-@Repeatable(MyAnnotations.class)
+@Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE,
         ElementType.FIELD,
         ElementType.METHOD,
@@ -12,7 +15,6 @@ import java.lang.annotation.*;
         ElementType.TYPE_PARAMETER,
         ElementType.TYPE_USE,
 })
-@Retention(RetentionPolicy.RUNTIME)
-public @interface MyAnnotation {
-    String[] value() default "Hello";
+public @interface MyAnnotations {
+    MyAnnotation[] value();
 }
