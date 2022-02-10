@@ -30,7 +30,7 @@ package collectionmap;
     - `Vector`
   - `Set` 接口：存储无序的、不可重复的数据（集合）
     - `HashSet`
-    - `LinkedHashSet`
+      - `LinkedHashSet`
     - `TreeSet`
 - `Map` 接口：双列集合，用来存储一对一对的数据（key - value）
   - `HashMap`
