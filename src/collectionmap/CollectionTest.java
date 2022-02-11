@@ -144,7 +144,7 @@ public class CollectionTest {
             System.out.println(o);
         }
 
-        List c3 = Arrays.asList(new String[]{"233", "666", "110"});
+        List c3 = Arrays.asList("233", "666", "110");
         System.out.println(c3);
 
         List c4 = Arrays.asList(new int[]{233, 666, 110});
