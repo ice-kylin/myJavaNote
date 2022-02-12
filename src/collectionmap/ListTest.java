@@ -8,16 +8,16 @@ import java.util.Iterator;
 import java.util.List;
 
 /*
-# `List` 接口`
+# `List` 接口
 
 - List` 接口：存储有序的、可重复的数据（动态数组）
   - `ArrayList`
     - 作为 `List` 接口的主要实现类
     - 线程不安全的，效率高
     - 底层使用 `Object[] elementData` 存储
-  - `LinkedList`
-    - 对于频繁的插入、删除操作，使用此类效率比 `ArrayList` 高
-    - 底层使用双向链表存储
+    - `LinkedList`
+      - 对于频繁的插入、删除操作，使用此类效率比 `ArrayList` 高
+      - 底层使用双向链表存储
   - `Vector`
     - 作为 `List` 接口的古老实现类
     - 线程安全的，效率低
