@@ -28,7 +28,6 @@ public class InnerClassTest {
 
         Nature n = new Nature();
         Nature.Bird b1 = n.new Bird(); // 创建 Bird 实例（非静态的成员内部类）
-
         Nature.Bird b2 = new Nature().new Bird(); // 创建 Bird 实例（非静态的成员内部类）
 
         b1.call();
