@@ -9,6 +9,18 @@ import java.util.Set;
 
 /*
 # `Map` 中常用的方法
+
+## 总结
+
+- 添加：`V put(K key, V value)`
+- 删除：`V remove(Object key)`
+- 修改：`V put(K key, V value)`
+- 查询：`V get(Object key)`
+- 长度：`int size()`
+- 遍历
+  - Set<K> keySet()`
+  - `Collection<V> values()`
+  - `Set<Map.Entry<K,V>> entrySet()`
  */
 public class MapTest1 {
     /*
