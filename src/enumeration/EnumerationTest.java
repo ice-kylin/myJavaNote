@@ -128,43 +128,43 @@ interface Showable {
 
 enum DayOfWeek implements Showable {
     // 1. 提供当前枚举类的对象，多个对象之间用 `,` 隔开，末尾对象一 `;` 结束
-    MONDAY("星期一", "MON"){
+    MONDAY("星期一", "MON") {
         @Override
         public void show() {
             System.out.println("今天是星期一~");
         }
     },
-    TUESDAY("星期二", "TUE"){
+    TUESDAY("星期二", "TUE") {
         @Override
         public void show() {
             System.out.println("今天是星期二~");
         }
     },
-    WEDNESDAY("星期三", "WED"){
+    WEDNESDAY("星期三", "WED") {
         @Override
         public void show() {
             System.out.println("今天是星期三~");
         }
     },
-    THURSDAY("星期四", "WED"){
+    THURSDAY("星期四", "WED") {
         @Override
         public void show() {
             System.out.println("今天是星期四~");
         }
     },
-    FRIDAY("星期五", "FRI"){
+    FRIDAY("星期五", "FRI") {
         @Override
         public void show() {
             System.out.println("今天是星期五~");
         }
     },
-    SATURDAY("星期六", "SAT"){
+    SATURDAY("星期六", "SAT") {
         @Override
         public void show() {
             System.out.println("今天是星期六~");
         }
     },
-    SUNDAY("星期天", "SUN"){
+    SUNDAY("星期天", "SUN") {
         @Override
         public void show() {
             System.out.println("今天是星期天~");
