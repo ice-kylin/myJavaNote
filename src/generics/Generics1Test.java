@@ -41,9 +41,45 @@ public class Generics1Test {
         show(arrayList);
     }
 
+    /*
+    ### 有限制条件的通配符的使用
+
+    - `G<? extends A>`：可以作为 G<A> 和 G<B> 的父类，其中 B 是 A 的子类
+    - `G<? super A>`：可以作为 G<A> 和 G<B> 的父类，其中 B 是 A 的父类
+     */
+    @Test
+    public void test3() {
+        ArrayList<? extends Person> list1;
+        ArrayList<? super Person> list2;
+
+        ArrayList<Object> objects = new ArrayList<>();
+        objects.add(new Object());
+        ArrayList<Person> people = new ArrayList<>();
+        people.add(new Person());
+        ArrayList<Student> students = new ArrayList<>();
+        students.add(new Student());
+
+        // list1 = objects;
+        list1 = people;
+        list1 = students;
+
+        list2 = objects;
+        list2 = people;
+        // list2 = students;
+
+        Person person = list1.get(0);
+        Object o = list2.get(0);
+    }
+
     public void show(ArrayList<?> list) {
         for (Object o : list) {
             System.out.println(o);
         }
+    }
+
+    private static class Person {
+    }
+
+    private static class Student extends Person {
     }
 }
