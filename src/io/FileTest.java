@@ -3,6 +3,7 @@ package io;
 import org.junit.Test;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Date;
 import java.util.Objects;
 
@@ -11,6 +12,10 @@ import java.util.Objects;
 
 - `File` 类的一个对象，代表一个文件或一个文件目录（文件夹）
 - `File` 类声明在 `java.io` 包下
+- `File` 类中涉及到文件或文件目录的创建、删除、重命名、修改时间、文件大小等方法
+  - 并未涉及到写入或读取文件内容的操作
+  - 如果需要读取或写入文件内容，必须使用 IO 流来完成
+- 后续 `File` 类的对象常会作为参数传递到流的构造器中，指明读取或写入的终点
  */
 public class FileTest {
     /*
@@ -113,6 +118,85 @@ public class FileTest {
 
         if (!isRenameTo) {
             System.out.println(file2.renameTo(file1));
+        }
+    }
+
+    /*
+    - `boolean isDirectory()`：判断文件是否是文件目录
+    - `boolean isFile()`：判断是否是文件
+    - `boolean exists()`：判断是否存在
+    - `boolean canRead()`：判断是否可读
+    - `boolean canWrite()`：判断是否可写
+    - `boolean isHidden()`：判断是否隐藏
+     */
+    @Test
+    public void test4() {
+        File file = new File("hello.txt");
+        File file1 = new File("world.txt");
+
+        System.out.println("file.isDirectory() = " + file.isDirectory());
+        System.out.println("file.isFile() = " + file.isFile());
+        System.out.println("file.exists() = " + file.exists());
+        System.out.println("file.canRead() = " + file.canRead());
+        System.out.println("file.canWrite() = " + file.canWrite());
+        System.out.println("file.isHidden() = " + file.isHidden());
+
+        System.out.println();
+
+        System.out.println("file1.isDirectory() = " + file1.isDirectory());
+        System.out.println("file1.isFile() = " + file1.isFile());
+        System.out.println("file1.exists() = " + file1.exists());
+        System.out.println("file1.canRead() = " + file1.canRead());
+        System.out.println("file1.canWrite() = " + file1.canWrite());
+        System.out.println("file1.isHidden() = " + file1.isHidden());
+    }
+
+    /*
+    - 创建硬盘中对应的文件或文件目录
+      - `boolean createNewFile() throws IOException`：创建文件，若文件存在，则不创建，返回 `false`
+      - `boolean mkdir()`
+        - 创建文件目录
+        - 如果此文件目录存在，就不创建了
+        - 如果此文件目录的上层目录不存在，就不创建了
+      - `boolean mkdirs()`
+        - 创建文件目录
+        - 如果此文件目录存在，就不创建了
+        - 如果此文件目录的上层目录不存在，连同上层目录一并创建
+    - 删除硬盘中的文件或文件目录
+      - `boolean delete()`：删除文件或者文件夹
+     */
+    @Test
+    public void test5() throws IOException {
+        File hi = new File("hi.txt");
+
+        if (hi.createNewFile()) {
+            System.out.println("创建成功：" + hi.getName());
+        } else if (hi.delete()) {
+            System.out.println("删除成功：" + hi.getName());
+        }
+    }
+
+    @Test
+    public void test6() {
+        File hellodir = new File("hellodir");
+        File hidir1 = new File("hidir/hidir1");
+
+        if (hellodir.mkdir()) {
+            System.out.println("创建成功：" + hellodir.getAbsolutePath());
+        } else if (hellodir.delete()) {
+            System.out.println("删除成功：" + hellodir.getAbsolutePath());
+        }
+
+        if (hidir1.mkdir()) {
+            System.out.println("创建成功 1：" + hidir1.getAbsolutePath());
+        } else if (hidir1.mkdirs()) {
+            System.out.println("创建成功 2：" + hidir1.getAbsolutePath());
+        } else {
+            File hidir = hidir1.getParentFile();
+            System.out.println(hidir.getAbsolutePath());
+            if (hidir.delete()) {
+                System.out.println("删除成功" + hidir.getAbsolutePath());
+            }
         }
     }
 }
