@@ -1,4 +1,4 @@
-package io.exer;
+package io;
 
 import org.junit.Test;
 
