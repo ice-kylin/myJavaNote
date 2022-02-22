@@ -44,6 +44,24 @@ public class StringOverviewTest {
       - 数据声明在方法区中的字符串常量池中
     2. 通过 `new` + 构造器的方式
       - RTFSC
+      - `String()`
+      - `String(String original)`
+      - `String(char[] value)`
+      - `String(char[] value, int offset, int count)`
+      - `String(int[] codePoints, int offset, int count)`
+      - `String(byte[] ascii, int hibyte, int offset, int count)`
+      - `String(byte[] ascii, int hibyte)`
+      - `String(byte[] bytes, int offset, int length, String charsetName)`
+      - `String(byte[] bytes, int offset, int length, Charset charset)`
+      - `String(byte[] bytes, String charsetName)`
+      - `String(byte[] bytes, Charset charset)`
+      - `String(byte[] bytes, int offset, int length)`
+      - `String(byte[] bytes)`
+      - `String(StringBuffer buffer)`
+      - `String(StringBuilder builder)`
+      - `String(char[] value, int off, int len, Void sig)`
+      - `String(AbstractStringBuilder asb, Void sig)`
+      - `String(byte[] value, byte coder)`
      */
     @Test
     public void test2() {

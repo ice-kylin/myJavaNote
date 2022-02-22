@@ -1,5 +1,7 @@
 package typeofdata;
 
+import org.junit.Test;
+
 /*
 # 类型转换
 
