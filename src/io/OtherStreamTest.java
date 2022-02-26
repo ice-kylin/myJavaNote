@@ -23,7 +23,8 @@ import java.io.*;
 ## 数据流
 
 - `DateInputStream` 和 `DateOutputStream`
-- 作用：
+- 作用：用于读取或写出基本数据类型的变量或字符串
+- 注意点：读取不同类型的数据的顺序要与当初写入文件时保存的数据类型的顺序一致
  */
 public class OtherStreamTest {
     @Test
@@ -64,6 +65,61 @@ public class OtherStreamTest {
         } finally {
             if (printStream != null) {
                 printStream.close();
+            }
+        }
+    }
+
+    @Test
+    public void test3() {
+        DataOutputStream dos = null;
+        try {
+            dos = new DataOutputStream(
+                    new BufferedOutputStream(
+                            new FileOutputStream("iotest/data.txt")
+                    )
+            );
+
+            dos.writeUTF("Hello World");
+            dos.writeInt(19);
+            dos.writeBoolean(true);
+            dos.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (dos != null) {
+                try {
+                    dos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        // 将文件中储存的基本数据类型变量和字符串读取到内存中（保存到变量中）
+        DataInputStream dis = null;
+        try {
+            dis = new DataInputStream(
+                    new BufferedInputStream(
+                            new FileInputStream("iotest/data.txt")
+                    )
+            );
+
+            String utf = dis.readUTF();
+            int i = dis.readInt();
+            boolean b = dis.readBoolean();
+
+            System.out.println(utf);
+            System.out.println(i);
+            System.out.println(b);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (dis != null) {
+                try {
+                    dis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
