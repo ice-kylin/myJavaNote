@@ -2,6 +2,7 @@ package reflection;
 
 import org.junit.Test;
 
+import java.lang.annotation.ElementType;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -10,11 +11,23 @@ import java.lang.reflect.Method;
 /*
 # 反射
 
+## 问题
+
 - 通过直接 `new` 的方式或反射的方式都可以调用公共的构造器，开发中如何选择
   - 建议使用直接 `new` 的方式
   - 什么时候使用反射的方式：当需要使用到反射的特征 —— 动态性的时候
 - 反射机制与面向对象中的封装性是否矛盾以及如何看待这两个技术
   - 不矛盾
+
+## 关于 `java.lang.Class` 类的理解
+
+- 类的加载过程
+  1. 程序经过 `javac.exe` 命令后，会生成一个或多个字节码文件（`.class` 结尾）
+  2. 接着使用 `java.exe` 命令对某个字节码文件进行解释运行
+    - 相当于将某个字节码文件加载到内存中，此过程就称为类的加载
+    - 加载到内存中的类，称为运行时类
+    - 此运行时类，就作为 `Class` 的一个实例
+- 换句话说，`Class` 的实例就对应着一个运行时类
  */
 public class ReflectionTest {
     /*
@@ -84,5 +97,35 @@ public class ReflectionTest {
 
         String nation = (String) showNation.invoke(p2, "China");
         System.out.println(nation);
+    }
+
+    /*
+    ## `Class` 实例可以是哪些结构
+
+    - class
+      - 外部类
+      - 成员
+        - 成员内部类
+        - 成员外部类
+      - 局部内部类
+      - 匿名内部类
+    - interface：接口
+    - []：数组
+    - enum：枚举
+    - annotation：注解
+    - primitive type：基本数据类型
+    - void
+     */
+    @Test
+    public void test3() {
+        System.out.println(Object.class);
+        System.out.println(Comparable.class);
+        System.out.println(String[].class);
+        System.out.println(int[][].class);
+        System.out.println(ElementType.class);
+        System.out.println(Override.class);
+        System.out.println(int.class);
+        System.out.println(void.class);
+        System.out.println(Class.class);
     }
 }

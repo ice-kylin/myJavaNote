@@ -3,7 +3,8 @@ package annotation;
 import java.lang.annotation.*;
 
 @Repeatable(MyAnnotations.class)
-@Target({ElementType.TYPE,
+@Target({
+        ElementType.TYPE,
         ElementType.FIELD,
         ElementType.METHOD,
         ElementType.PARAMETER,
