@@ -29,6 +29,8 @@ public class Person<T> extends Animal implements Comparable<Person<T>> {
         this.name = name;
     }
 
+    @MyAnnotation("Java")
+    @MyAnnotation("Python")
     public int getAge() {
         return age;
     }
@@ -39,6 +41,11 @@ public class Person<T> extends Animal implements Comparable<Person<T>> {
 
     public void setPid(int pid) {
         this.pid = pid;
+    }
+
+    public String show(String info) throws RuntimeException {
+        System.out.println(info);
+        return info;
     }
 
     @Override
