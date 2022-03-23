@@ -2,6 +2,7 @@ package reflection.person;
 
 import org.junit.Test;
 
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
 
 /*
@@ -56,5 +57,47 @@ public class OtherTest {
             System.out.println(((Class<?>) actualTypeArgument).getName());
         }
          */
+    }
+
+    /*
+    ## 获取运行时类实现的接口
+     */
+    @Test
+    public void test4() {
+        Class<?> personClass = Person.class;
+
+        for (Class<?> personClassInterface : personClass.getInterfaces()) {
+            System.out.println(personClassInterface);
+        }
+
+        System.out.println();
+
+        // 获取运行时类的父类实现的接口
+        for (Class<?> anInterface : personClass.getSuperclass().getInterfaces()) {
+            System.out.println(anInterface);
+        }
+    }
+
+    /*
+    ## 获取运行时类所在的包
+     */
+    @Test
+    public void test5() {
+        Class<?> personClass = Person.class;
+
+        Package personClassPackage = personClass.getPackage();
+        System.out.println(personClassPackage);
+    }
+
+    /*
+    ## 获取运行时类声明的注解
+     */
+    @Test
+    public void test6() {
+        Class<?> personClass = Person.class;
+
+        for (Annotation personClassAnnotation : personClass.getAnnotations()) {
+            System.out.println(personClassAnnotation);
+        }
     }
 }
