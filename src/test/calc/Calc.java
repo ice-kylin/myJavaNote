@@ -1,11 +1,15 @@
 package test.calc;
 
 import test.calc.exp.InfixExp;
+import test.calc.exp.ReversePolishExp;
+import test.calc.expelement.ExpElement;
 import test.calc.expelement.Operand;
 import test.calc.expelement.Operator;
 
+import java.util.Stack;
+
 public class Calc {
-    public static InfixExp parseExp(String exp) {
+    public static InfixExp parseExp(String exp) throws Exception {
         exp = exp.replace(" ", "").replace(",", "");
         InfixExp infixExp = new InfixExp();
 
@@ -51,7 +55,53 @@ public class Calc {
         return infixExp;
     }
 
-    private static int getOperatorLength(String exp, int i) {
+    public static ReversePolishExp convertToReversePolishExp(InfixExp exp) {
+        ReversePolishExp reversePolishExp = new ReversePolishExp();
+        Stack<Operator> operatorStack = new Stack<>();
+
+        for (ExpElement infixExpElement : exp.getInfixExpElements()) {
+            if (infixExpElement instanceof Operand) {
+                reversePolishExp.addReversePolishExpElement(infixExpElement);
+            } else {
+                if (infixExpElement instanceof Operator) {
+                    Operator infixExpOperator = (Operator) infixExpElement;
+                    String infixExpOperatorStr = infixExpOperator.getOperator();
+                    if ("(".equals(infixExpOperatorStr)) {
+                        operatorStack.push(infixExpOperator);
+                    } else if (")".equals(infixExpOperatorStr)) {
+                        while (!"(".equals(operatorStack.peek().getOperator())) {
+                            reversePolishExp.addReversePolishExpElement(operatorStack.pop());
+                        }
+
+                        operatorStack.pop();
+                    } else {
+                        while (
+                                !operatorStack.isEmpty() &&
+                                        (Operator.operators.get(operatorStack.peek().getOperator()) <=
+                                                Operator.operators.get(infixExpOperatorStr)) &&
+                                        !"(".equals(operatorStack.peek().getOperator())
+                        ) {
+                            reversePolishExp.addReversePolishExpElement(operatorStack.pop());
+                        }
+
+                        operatorStack.push(infixExpOperator);
+                    }
+                }
+            }
+        }
+
+        int size = operatorStack.size();
+        for (int i = 0; i < size; i++) {
+            Operator operator = operatorStack.pop();
+            if (!"(".equals(operator.getOperator())) {
+                reversePolishExp.addReversePolishExpElement(operator);
+            }
+        }
+
+        return reversePolishExp;
+    }
+
+    private static int getOperatorLength(String exp, int i) throws Exception {
         int len = 0;
 
         for (String operator : Operator.operators.keySet()) {
@@ -65,7 +115,7 @@ public class Calc {
         if (len > 0) {
             return len;
         } else {
-            throw new RuntimeException("no such operator");
+            throw new Exception("no such operator");
         }
     }
 }

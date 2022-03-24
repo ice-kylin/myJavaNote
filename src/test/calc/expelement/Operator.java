@@ -1,6 +1,7 @@
 package test.calc.expelement;
 
 import java.util.LinkedHashMap;
+import java.util.Objects;
 
 public class Operator implements ExpElement {
     public static final LinkedHashMap<String, Integer> operators = new LinkedHashMap<>();
@@ -33,6 +34,25 @@ public class Operator implements ExpElement {
 
     public Operator(String operator) {
         this.operator = operator;
+    }
+
+    public String getOperator() {
+        return operator;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Operator operator1 = (Operator) o;
+
+        return Objects.equals(operator, operator1.operator);
+    }
+
+    @Override
+    public int hashCode() {
+        return operator != null ? operator.hashCode() : 0;
     }
 
     @Override

@@ -1,8 +1,28 @@
 package test.calc.exp;
 
-public class ReversePolishExp implements Computable {
+import test.calc.expelement.ExpElement;
+
+import java.util.LinkedList;
+
+public class ReversePolishExp {
+    private final LinkedList<ExpElement> reversePolishExpElements = new LinkedList<>();
+
+    public LinkedList<ExpElement> getReversePolishExpElements() {
+        return reversePolishExpElements;
+    }
+
+    public void addReversePolishExpElement(ExpElement expElement) {
+        reversePolishExpElements.add(expElement);
+    }
+
     @Override
-    public double getValue() {
-        return 0;
+    public String toString() {
+        StringBuilder reversePolishExpSB = new StringBuilder();
+
+        for (ExpElement reversePolishExpElement : reversePolishExpElements) {
+            reversePolishExpSB.append(reversePolishExpElement).append("\n");
+        }
+
+        return reversePolishExpSB.toString();
     }
 }
