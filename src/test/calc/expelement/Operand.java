@@ -2,11 +2,10 @@ package test.calc.expelement;
 
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
 
 public class Operand implements ExpElement {
-    public static final Set<Character> OPERAND_CHARS = new HashSet<>(
+    public static final Set<Character> OPERANDS = new HashSet<>(
             Arrays.asList(
                     '0',
                     '1',
@@ -23,15 +22,15 @@ public class Operand implements ExpElement {
     );
 
     private final boolean isPositive;
-    private final String operand;
+    private final double operand;
 
     public Operand(boolean isPositive, String operand) {
         this.isPositive = isPositive;
-        this.operand = operand;
+        this.operand = Double.parseDouble(operand);
     }
 
     public double getValue() {
-        return (isPositive ? 1 : -1) * Double.parseDouble(operand);
+        return (isPositive ? 1 : -1) * operand;
     }
 
     @Override
@@ -42,13 +41,16 @@ public class Operand implements ExpElement {
         Operand operand1 = (Operand) o;
 
         if (isPositive != operand1.isPositive) return false;
-        return Objects.equals(operand, operand1.operand);
+        return Double.compare(operand1.operand, operand) == 0;
     }
 
     @Override
     public int hashCode() {
-        int result = (isPositive ? 1 : 0);
-        result = 31 * result + (operand != null ? operand.hashCode() : 0);
+        int result;
+        long temp;
+        result = (isPositive ? 1 : 0);
+        temp = Double.doubleToLongBits(operand);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
     }
 

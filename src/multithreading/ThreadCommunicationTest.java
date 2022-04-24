@@ -37,8 +37,8 @@ public class ThreadCommunicationTest {
 }
 
 class NumRunnable implements Runnable {
-    private int currentNum = 1;
     private final Object obj = new Object();
+    private int currentNum = 1;
 
     @Override
     public void run() {

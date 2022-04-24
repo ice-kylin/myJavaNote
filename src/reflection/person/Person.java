@@ -4,10 +4,10 @@ import annotation.MyAnnotation;
 
 @MyAnnotation
 public class Person<T> extends Animal implements Comparable<Person<T>> {
-    @MyAnnotation
-    private String name;
     public final int age;
     int pid;
+    @MyAnnotation
+    private String name;
 
     @MyAnnotation
     public Person() {

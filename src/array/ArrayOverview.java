@@ -75,7 +75,6 @@ package array;
  *     - 静态域
  */
 public class ArrayOverview {
-
     public static void main(String[] args) {
         int[] ids;
         ids = new int[]{1, 2, 3, 4}; // 静态初始化
@@ -147,5 +146,4 @@ public class ArrayOverview {
             System.out.println("arr5[" + i + "] = " + arr5[i]);
         }
     }
-
 }

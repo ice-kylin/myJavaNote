@@ -6,8 +6,8 @@ import online.icekylin.teamview.domain.Employee;
 import online.icekylin.teamview.domain.Programmer;
 
 public class TeamService {
-    private static int counter = 1;
     private static final int MAX_MEMBER = 5;
+    private static int counter = 1;
     private final Programmer[] team = new Programmer[MAX_MEMBER];
     private int total;
 

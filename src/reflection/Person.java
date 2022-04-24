@@ -1,8 +1,8 @@
 package reflection;
 
 public class Person {
-    private String name;
     public int age;
+    private String name;
 
     public Person() {
     }

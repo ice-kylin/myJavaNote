@@ -1,5 +1,11 @@
 package objectoriented.interfacetest;
 
+interface USB {
+    void start();
+
+    void stop();
+}
+
 /*
 # 接口的使用
 
@@ -55,12 +61,6 @@ class Computer {
 
         u.stop();
     }
-}
-
-interface USB {
-    void start();
-
-    void stop();
 }
 
 class Flash implements USB {

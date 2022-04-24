@@ -28,8 +28,7 @@ public class SimpleDateFormatTest {
      */
     @Test
     public void test1() throws ParseException {
-        SimpleDateFormat sdf;
-        sdf = new SimpleDateFormat(); // 实例化 SimpleDateFormat
+        SimpleDateFormat sdf = new SimpleDateFormat(); // 实例化 SimpleDateFormat
 
         Date d1 = new Date();
         System.out.println("d1 = " + d1);

@@ -75,6 +75,11 @@ class Animal {
     int age;
     private int legs;
 
+    // 对属性的获取
+    public int getLegs() {
+        return legs;
+    }
+
     // 对属性的设置
     public void setLegs(int l) {
         if (l >= 0 && l % 2 == 0) {
@@ -82,11 +87,6 @@ class Animal {
         } else {
             legs = 0;
         }
-    }
-
-    // 对属性的获取
-    public int getLegs() {
-        return legs;
     }
 
     public void eat() {

@@ -17,7 +17,7 @@ public class Calc {
         boolean isPositive = true;
 
         for (int i = 0; i < exp.length(); ) {
-            if (Operand.OPERAND_CHARS.contains(exp.charAt(i))) { // 如果是数字，将其加入 numSB
+            if (Operand.OPERANDS.contains(exp.charAt(i))) { // 如果是数字，将其加入 numSB
                 numSB.append(exp.charAt(i));
 
                 if (i == exp.length() - 1) { // 如果是最后一个字符，将 numSB 加入 infixExp
@@ -77,8 +77,8 @@ public class Calc {
                     } else {
                         while (
                                 !operatorStack.isEmpty() &&
-                                        (Operator.operators.get(operatorStack.peek().getOperator()) <=
-                                                Operator.operators.get(infixExpOperatorStr)) &&
+                                        (Operator.OPERATORS.get(operatorStack.peek().getOperator()) <=
+                                                Operator.OPERATORS.get(infixExpOperatorStr)) &&
                                         !"(".equals(operatorStack.peek().getOperator())
                         ) {
                             reversePolishExp.addReversePolishExpElement(operatorStack.pop());
@@ -104,7 +104,7 @@ public class Calc {
     private static int getOperatorLength(String exp, int i) throws Exception {
         int len = 0;
 
-        for (String operator : Operator.operators.keySet()) {
+        for (String operator : Operator.OPERATORS.keySet()) {
             if (exp.startsWith(operator, i)) {
                 if (operator.length() > len) {
                     len = operator.length();

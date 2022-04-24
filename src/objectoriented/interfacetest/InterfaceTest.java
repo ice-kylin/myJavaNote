@@ -1,5 +1,26 @@
 package objectoriented.interfacetest;
 
+interface Flyable {
+    // 全局常量
+    public static final int MAX_SPEED = 7900;
+    int MIN_SPEED = 1; // 省略了 public static final
+
+    // 静态方法
+    static void m1() {
+        System.out.println("m1");
+    } // 省略了 public
+
+    // 抽象方法
+    public abstract void fly();
+
+    void stop(); // 省略了 public abstract
+
+    // 默认方法
+    default void m2() {
+        System.out.println("m2");
+    } // 省略了 public
+}
+
 /*
 # 接口
 
@@ -43,27 +64,6 @@ public class InterfaceTest {
         Flyable.m1();
         p.m2();
     }
-}
-
-interface Flyable {
-    // 全局常量
-    public static final int MAX_SPEED = 7900;
-    int MIN_SPEED = 1; // 省略了 public static final
-
-    // 抽象方法
-    public abstract void fly();
-
-    void stop(); // 省略了 public abstract
-
-    // 静态方法
-    static void m1() {
-        System.out.println("m1");
-    } // 省略了 public
-
-    // 默认方法
-    default void m2() {
-        System.out.println("m2");
-    } // 省略了 public
 }
 
 class Plane implements Flyable {

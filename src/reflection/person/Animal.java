@@ -4,9 +4,8 @@ import java.io.Serializable;
 
 public class Animal implements Serializable, MyInterface {
     private static final long serialVersionUID = 42L;
-
-    public String species;
     private final boolean gender;
+    public String species;
     int id;
 
     public Animal() {

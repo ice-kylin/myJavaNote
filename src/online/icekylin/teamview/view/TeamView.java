@@ -8,10 +8,6 @@ import online.icekylin.teamview.service.TeamService;
 import online.icekylin.teamview.util.TSUtility;
 
 public class TeamView {
-    public static void main(String[] args) {
-        new TeamView().enterMainMenu();
-    }
-
     private static final String EMPLOYEES_HEADER;
     private static final String TEAM_HEADER;
 
@@ -38,6 +34,10 @@ public class TeamView {
     private final NameListService listSvc = new NameListService();
     private final TeamService teamSvc = new TeamService();
     private boolean isExit;
+
+    public static void main(String[] args) {
+        new TeamView().enterMainMenu();
+    }
 
     public void enterMainMenu() {
         boolean ifDisplayEmployees = true;

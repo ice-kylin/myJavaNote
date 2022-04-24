@@ -1,5 +1,9 @@
 package objectoriented.interfacetest;
 
+interface Network {
+    void browse();
+}
+
 /*
 # 代理模式
  */
@@ -8,10 +12,6 @@ public class ProxyTest {
         ProxyServer p = new ProxyServer(new RealServer());
         p.browse();
     }
-}
-
-interface Network {
-    void browse();
 }
 
 class RealServer implements Network {
