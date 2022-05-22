@@ -16,6 +16,5 @@ package web;
  */
 public class WebOverview {
     public static void main(String[] args) {
-
     }
 }

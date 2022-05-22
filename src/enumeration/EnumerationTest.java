@@ -168,6 +168,7 @@ class Season {
     // 1. 声明对象的属性：`private final` 修饰
     private final String seasonName;
     private final String seasonDesc;
+
     // 2. 私有化类的构造器，并给对象属性初始化
     private Season(String seasonName, String seasonDesc) {
         this.seasonName = seasonName;

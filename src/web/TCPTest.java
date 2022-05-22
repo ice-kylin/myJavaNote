@@ -20,7 +20,7 @@ public class TCPTest {
             // 1. 创建 Socket 对象，指明服务器端的 IP 和端口号
             InetAddress inetAddress = InetAddress.getByName("127.0.0.1");
             socket = new Socket(inetAddress, 2333);
-            // 2. 获取一个输入流，用于输出数据
+            // 2. 获取一个输出流，用于输出数据
             bos = new BufferedOutputStream(socket.getOutputStream());
             // 3. 写出数据的操作
             bos.write("我是客户端呀 ~".getBytes());
