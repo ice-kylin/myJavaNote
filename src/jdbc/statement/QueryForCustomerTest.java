@@ -1,7 +1,6 @@
 package jdbc.statement;
 
 import jdbc.bean.Customer;
-import jdbc.bean.Order;
 import jdbc.util.JDBCUtils;
 import org.junit.Test;
 

@@ -29,7 +29,7 @@ import java.lang.reflect.Method;
     - 此运行时类，就作为 `Class` 的一个实例
 - 换句话说，`Class` 的实例就对应着一个运行时类
  */
-public class ReflectionTest {
+public class Reflection1Test {
     /*
     ## 反射之前
 

@@ -21,6 +21,15 @@ public class Person<T> extends Animal implements Comparable<Person<T>> {
         this.pid = pid;
     }
 
+    private Person(String name) {
+        this.age = 0;
+        this.name = name;
+    }
+
+    private static void showDesc() {
+        System.out.println("我是一个人");
+    }
+
     public String getName() {
         return name;
     }
@@ -52,5 +61,14 @@ public class Person<T> extends Animal implements Comparable<Person<T>> {
     @MyAnnotation("hi")
     public int compareTo(Person o) {
         return 0;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "age=" + age +
+                ", pid=" + pid +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

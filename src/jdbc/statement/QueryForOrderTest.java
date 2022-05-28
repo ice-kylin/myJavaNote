@@ -58,7 +58,6 @@ public class QueryForOrderTest {
     }
 
 
-
     @Test
     public void test1() {
         String sql = "SELECT order_id, order_name, order_date FROM `order` WHERE order_id = ?";

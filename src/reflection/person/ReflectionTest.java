@@ -8,7 +8,7 @@ import java.lang.reflect.InvocationTargetException;
 /*
 # 调用运行时类的指定结构
  */
-public class RTest {
+public class ReflectionTest {
     @Test
     public void testField1() throws
             NoSuchMethodException,
