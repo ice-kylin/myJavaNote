@@ -21,6 +21,9 @@ import java.util.Comparator;
     - Lambda 体应使用一对 `{}` 包裹
     - 如果 Lambda 体只有一条执行语句（可能是 `return` 语句），可以省略这一对 `{}` 和 `return` 关键字
 - Lambda 表达式的本质：作为接口的实例
+- 如果一个接口中，只声明了一个抽象方法，则此接口就称为函数式接口
+  - 可以在一个接口上使用 @FunctionalInterface 注解，这样可以检查它是否是一个函数式接口
+  - 所以以前用匿名实现类表示的现在都可以用 Lambda 表达式来写
  */
 public class LambdaTest {
     @Test
