@@ -1,4 +1,4 @@
-package newfeatures.java8.lambda;
+package newfeatures.java8;
 
 public class Customer {
     private int id;

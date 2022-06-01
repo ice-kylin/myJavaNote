@@ -1,5 +1,6 @@
 package newfeatures.java8.lambda;
 
+import newfeatures.java8.Customer;
 import org.junit.Test;
 
 import java.util.Arrays;
