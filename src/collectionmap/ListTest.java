@@ -42,7 +42,7 @@ import java.util.List;
     - 结论：建议开发中使用带参的构造器：`ArrayList(int initialCapacity)`
 - JDK 8.0 情况下
   - `ArrayList arrayList = new ArrayList();`
-    - 底层 `Object[] elementData` 初始化为 `{}`，并没有船舰长度为 10 的 `Object[]` 数组
+    - 底层 `Object[] elementData` 初始化为 `{}`，并没有创建长度为 10 的 `Object[]` 数组
   - `arrayList.add()`
     - 第一次调用 `add()` 时，底层才创建了长度为 `10` 的数组
     - 后续的添加和扩容操作和 JDK 7.0 无异

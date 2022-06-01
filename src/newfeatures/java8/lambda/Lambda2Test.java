@@ -3,6 +3,7 @@ package newfeatures.java8.lambda;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
@@ -18,6 +19,17 @@ import java.util.function.Predicate;
   - Function<T,R>
 - 断定型接口
   - Predicate<T>
+- BiFunction<T,U,R>
+- UnaryOperator<T>
+- BinaryOperator<T,U>
+- BiConsumer<T,U>
+- BiPredicate<T,U>
+- ToIntFunction<T>
+- ToLongFunction<T>
+- ToDoubleFunction<T>
+- IntFunction<R>
+- LongFunction<R>
+- DoubleFunction<R>
  */
 public class Lambda2Test {
     public void happyTime(Double money, Consumer<Double> consumer) {
@@ -48,6 +60,18 @@ public class Lambda2Test {
 
     @Test
     public void test2() {
+        ArrayList<String> filterCities = filterString(
+                Arrays.asList(
+                        "北京",
+                        "天津",
+                        "上海",
+                        "广州",
+                        "东京",
+                        "南京"
+                ),
+                city -> city.contains("京")
+        );
 
+        System.out.println(filterCities);
     }
 }
