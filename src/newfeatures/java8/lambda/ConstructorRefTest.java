@@ -1,6 +1,6 @@
 package newfeatures.java8.lambda;
 
-import newfeatures.java8.Customer;
+import newfeatures.java8.Employee;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -21,19 +21,19 @@ public class ConstructorRefTest {
     // 构造器引用
     @Test
     public void test1() {
-        Supplier<Customer> supplier = Customer::new;
+        Supplier<Employee> supplier = Employee::new;
         System.out.println(supplier.get());
     }
 
     @Test
     public void test2() {
-        Function<Integer, Customer> f = Customer::new;
+        Function<Integer, Employee> f = Employee::new;
         System.out.println(f.apply(1001));
     }
 
     @Test
     public void test3() {
-        BiFunction<Integer, String, Customer> f = Customer::new;
+        BiFunction<Integer, String, Employee> f = Employee::new;
         System.out.println(f.apply(1002, "Dupi"));
     }
 

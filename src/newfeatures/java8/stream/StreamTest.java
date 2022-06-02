@@ -1,6 +1,6 @@
 package newfeatures.java8.stream;
 
-import newfeatures.java8.Customer;
+import newfeatures.java8.Employee;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -43,12 +43,12 @@ public class StreamTest {
 
         System.out.println(s1);
 
-        Customer[] customers = {
-                new Customer(1001, "icekylin"),
-                new Customer(1002, "Dupi")
+        Employee[] employees = {
+                new Employee(1001, "icekylin"),
+                new Employee(1002, "Dupi")
         };
 
-        Stream<Customer> s2 = Arrays.stream(customers);
+        Stream<Employee> s2 = Arrays.stream(employees);
 
         System.out.println(s2);
     }
