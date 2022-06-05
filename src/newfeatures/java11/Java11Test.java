@@ -88,5 +88,16 @@ public class Java11Test {
     @Test
     public void test5() {
         Consumer<Object> con = (@Deprecated var o) -> System.out.println(o);
+
+        con.accept("Hello World");
     }
+
+    /*
+    ## HttpClient 替换原有的 HttpURLConnection
+
+    ## 更简化的编译运行程序
+
+    - 执行源文件的第一个类，必须包含主方法
+    - 不可以使用其它源文件中的自定义类，本文件中的自定义类是可以使用的
+     */
 }

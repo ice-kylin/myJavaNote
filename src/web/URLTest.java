@@ -41,7 +41,9 @@ public class URLTest {
         BufferedInputStream bis = null;
         HttpURLConnection urlConnection = null;
         try {
-            URL url = new URL("https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png");
+            URL url = new URL(
+                    "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+            );
             urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.connect();
             bis = new BufferedInputStream(urlConnection.getInputStream());
