@@ -2,9 +2,14 @@ package newfeatures.java9;
 
 import org.junit.Test;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class Java9Test {
     /*
@@ -77,6 +82,92 @@ public class Java9Test {
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    /*
+    ## 集合工厂方法：创建只读集合
+     */
+    @Test
+    public void test4() {
+        List<Integer> list = List.of(
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10
+        );
+
+        System.out.println(list);
+
+        System.out.println();
+
+        Set<Integer> set = Set.of(
+                23,
+                3,
+                54,
+                65,
+                43,
+                76,
+                87,
+                34,
+                46
+        );
+
+        System.out.println(set);
+
+        System.out.println();
+
+        Map<String, Integer> map = Map.of(
+                "Tom",
+                23,
+                "Jerry",
+                54
+        );
+
+        System.out.println(map);
+
+        System.out.println();
+
+        Map<String, Integer> map1 = Map.ofEntries(
+                Map.entry(
+                        "Tom",
+                        23
+                ),
+                Map.entry(
+                        "Jerry",
+                        54
+                )
+        );
+
+        System.out.println(map1);
+    }
+
+    /*
+    ## InputStream 的新方法：transferTo()
+     */
+    @Test
+    public void test5() {
+        InputStream is = ClassLoader.getSystemResourceAsStream(
+                "hello.txt"
+        );
+
+
+        try (is) {
+            if (is != null) {
+                FileOutputStream fos = new FileOutputStream(
+                        "src/hello-copy.txt"
+                );
+
+                is.transferTo(fos);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
